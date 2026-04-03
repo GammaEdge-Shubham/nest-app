@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+  moduleFormat    = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+model User{
+  id Int @id
+  email String
+  name String
+  password String
+}
+
+model Post{
+  id Int @id
+  description String
+  title String
+  likes Int
+  shares Int
+}
