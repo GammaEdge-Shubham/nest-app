@@ -19,4 +19,8 @@ export class MongoUserRepository implements UserRepository {
   async findAll() {
     return await this.userModel.find().lean();
   }
+
+  async findUserByEmail(email: string): Promise<any> {
+    return await this.userModel.findOne({ email: email });
+  }
 }

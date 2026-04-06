@@ -9,17 +9,11 @@ datasource db {
 }
 
 
-model User{
-  id Int @id
-  email String
-  name String
-  password String
-}
-
-model Post{
-  id Int @id
-  description String
-  title String
-  likes Int
-  shares Int
+model User {
+  id         String  @id @default(uuid())
+  firstName  String
+  lastName   String?
+  email      String  @unique
+  password   String
+  isVerified Boolean @default(false)
 }

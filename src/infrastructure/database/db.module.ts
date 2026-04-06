@@ -9,6 +9,7 @@ export class DatabaseModule {
     const imports: any = [ConfigModule];
 
     const dbType = process.env.DB_TYPE!;
+    if (!dbType) throw new Error('DB type is not set in env!');
     switch (dbType.toLowerCase()) {
       case 'postgres':
         imports.push(PostgresModule);
